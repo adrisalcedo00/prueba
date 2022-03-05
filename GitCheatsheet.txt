@@ -1,0 +1,52 @@
+# Git Cheatsheet!
+# ---------------
+
+# Configuracion inicial
+git config --global user.name <user_name>
+git config --global user.email <user_email>
+git config --global user.password <user_password>
+
+# Iniciar repo local
+git init
+
+# Clonar repo remota
+git clone <url>
+
+# Repo remotas
+git remote # listar repos remotas
+git remote add <name_repo> <url> # conectar con repo remota
+git remote remove <name_repo> # eliminar repo remota (localmente)
+
+# Ramas
+git branch # listar ramas
+git checkout <name_branch> # cambiar de rama
+
+git branch <name_branch> # crear rama
+git merge <name_branch> # unir rama a la rama de donde salió
+git branch -d <name_branch> # borrar rama
+
+# Fases de desarrollo local
+git status # info de archivos y modificaciones que se han hecho
+
+# 1. Working directory
+git restore <filename> # descartar cambios en archivo
+
+# 2. Staging area
+(git stage | git add) (. | -A | <filename>) # añadir archivo/s al stage area
+git restore --staged <filename> # eliminar archivo del stage area
+
+# 3. Local Repo
+git log # listar commits 
+git reflog # listar commits (hasta los borrados)
+
+git commit -am|-m <message> # añadir archivos del stage area al repo con un mensaje (con -am no hace falta pasar a stage)
+git reset ( |--soft|--hard) <id_commit> # revertir commit al stage area (--soft) al wd () o eliminar el commit y los cambios (--hard)
+
+git diff <id_commit> <id_commit> # ver cambios en los archivos
+
+# Actualizar cambios en la nube (-u para no volver a especificar la rama)
+git pull <name_repo> <name_branch> # bajar los cambios a local
+git push <name_repo> <name_branch> # subir los cambios a la nube
+
+
+
